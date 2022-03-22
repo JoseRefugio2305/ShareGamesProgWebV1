@@ -1,0 +1,121 @@
+/*Fuente que se hereda en toda la pagina*/
+*{
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", 
+  Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+/*Estilos del Menu lateral*/
+/*En el mnue laterla se desactivan los estilos de las listas y de las etiquetas A para que no muestran los puntos que traen las listas ni el subrayado que traen las etiquetas A por defecto
+Los estilos se aplican por medio de clases para que no afecten a etiquetas de otros articulos*/
+.ListMenu{
+    list-style: none;
+    width: 100%;
+    padding: 0;
+    
+    
+}
+.itemListMenu{
+    list-style: none;
+}
+.linkarticles{
+    text-decoration: none;
+    color: black;
+    border-radius: 5px;
+}
+/*Efecto de hover en las opciones del menu lateral, los efectos dehover solo se activan cuando el cursor se encuentra por encima de la etiqueta y desaparecen cuando se deja de tener el curosr encima de ellas*/
+.linkarticles:hover{
+    color: white;
+    background: black;
+    text-decoration: underline;
+    font-size: large;
+}
+
+
+/*Estilos del formulario de comentario y el formulario de subir juego, ambos usan el los mismo estilos, en inputs, selects, text area botones
+A los inputs se les paplico un borde redondeado y en el caso de los texarea se quito la opcion de redimensionarlos */
+/* input{
+    border-radius: 5px;
+    width: 90%;
+} */
+textarea{
+    border-radius: 5px;
+    resize: none;
+    width: 90%;
+}
+.formcontainer{
+    width: 60%;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2); 
+    margin-left: auto; 
+    margin-right: auto; 
+    border-radius: 10px;
+    background: rgb(207, 207, 207);
+}
+.divaviso{ 
+    text-align: center;
+}
+#btnsubmit{
+    border-radius: 5px;
+    font-weight: bold;
+    color: white;
+    background: rgb(26, 26, 250);
+}
+#btncancel{
+    border-radius: 5px;
+    font-weight: bold;
+    color: white;
+    background: gray;
+}
+.checkInline{
+    display: inline;
+}
+/*Este padding en los form, es para que se separe un pco del lado izquierdo del div*/
+form{
+    padding-left: 10%;
+}
+/*En este apartado se dice que selects e inputs tienen el mismo estilo*/
+select,
+input{
+    border-radius: 5px;
+}
+.form-group{
+    padding-bottom: 1%;
+}
+
+/*Estilos de Juego Nuevo*/
+.btnDownload{
+    background: rgb(38, 38, 245);
+    color: white;
+    cursor: pointer;
+}
+.marqueeScreen{
+    width: 80%;
+    background: black;
+}
+.ScreenShot{
+    width: 75%;
+}
+
+/*Submenu juegos gratis*/
+.freegames{
+    width: 80%;
+    border-spacing: 20px 0px; 
+    background: gainsboro;
+    border-collapse: separate;
+}
+
+/*Estilos pagina homa de vision y mision de la empresa*/
+.divmisionvision{
+    text-align: center; 
+    width: 80%; 
+    padding-left: 10%;
+}
+/*Estos estilos son para una animacion que cambirara poco a poco el bacground del body */
+.bodymisionvision {
+    -webkit-animation: random 15s infinite;
+    animation: random 15s infinite;
+    }
+    
+    @keyframes random {
+    30% { background-color: #ffffff; } 
+    60% { background-color: #696969; } 
+    90% { background-color: #000000; color: white;}
+    }

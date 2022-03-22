@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <!--Titulo-->
+    <title>Banner</title>
+    <!--Estilo-->
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+    <div>
+        <!--Se usa la etiqueta nav para contener la barra de navegacion o banner de la pagina-->
+        <nav style="background: black; color: white; width: 100%; height: 100%;">
+            <!--Con una tabl se realiza la distribucion de las demas eqiquetas del banner-->
+            <table>
+                <tr>
+                    <td>
+                        <!--Logo de la pagina-->
+                        <img src="img/image.png" alt="" width="100" height="100">
+                        
+                    </td>
+                    <td>
+                        <!--Nombre de la pagina-->
+                        <big><h2>ShareGames</h2></big>
+                    </td>
+                    <td style="width: 70%; text-align: center;">
+                        <!--Mensaje que estara cambiando cada cierto tiempo-->
+                        <big><h1 id="hBanner">Bienvenido</h1></big>
+                    </td>
+                    <td>
+                        <!--Input de busqueda en la pagina-->
+                        <input type="text" name="txtsearch" id="txtsearch" placeholder="Busqueda">
+                    </td>
+                    <td>
+                        <!--Imagen de perfil del usuario-->
+                        <img src="img/amigo.png" alt="" width="100" height="100">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="5">
+                        <!--Un marquee que presentara noticias recientes, en este caso los juegos que saldran en marzo-->
+                        <marquee behavior="scroll" direction="left">Lanzamientos de Marzo // Demetrios - The BIG cynical abventure // Have a Nice Death // Chocobo GP // World Of One // Elden Ring // WWE 2K22 // Young Souls /// Kirby y la tierra olvidada</marquee>
+                    </td>
+                </tr>
+            </table>
+            
+            
+            
+            
+        </nav>
+    </div>
+    <!--Codigo de javascript-->
+    <script>
+        //se declaran la variable que se usara en la siguiente funcion
+        var random=0
+        //Con set interval definimos una funcion que se estara ejecutando cada cierto tiempo, en este caso cada 5 segundos
+        var intervaltimeBanner = setInterval(()=>{
+            random=Math.floor(Math.random() * (4 - 1) + 1)//generamos un nuemro entero aleatorio entre 1 y 4 sin incluir el 4
+            //evaluamos el valor random
+            switch (random)
+            {//en cada caso se muestra un mensaje diferente en el banner, usando la propiedad innerHTML para agregar un texto diferente, se muestra en el H1 con el id hBanner
+                case 1: 
+                document.getElementById('hBanner').innerHTML='Explora Juegos Gratis'
+                break
+                case 2:
+                document.getElementById('hBanner').innerHTML='Todos Los Días Nuevo Contenido'
+                break
+                case 3:
+                document.getElementById('hBanner').innerHTML='Bienvenido'
+                break
+            }
+        },5000)
+    </script>
+</body>
+</html>

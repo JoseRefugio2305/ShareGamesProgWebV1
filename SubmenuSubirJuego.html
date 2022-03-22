@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <!--Titulo y estilos d ela pagina-->
+    <title>Subir Juego</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+    <div>
+        <!--Titulo del articulo-->
+        <hr height="75">
+        <center><h1>Subir Juego</h1></center>
+        <hr height="75">
+    </div>
+    <div>
+        
+        <div class="formcontainer">
+            <center><h3>Ingresa los datos correspondientes de tu juego</h3></center>
+            <!--Formulario para subir un juego a la plataforma-->
+            <form name="formUploadGame" id="formUploadGame" action="">
+                
+                <div class="form-group">
+                    <label for="email">Sube Una Imagen de Cubierta del Juego: (Imagen con mínimo de 350x350 a 500x500)</label><br>
+                    <!--Input de tipo archivo, con el atributo accept le digo que solo acepte imagenes de cualquier formato-->
+                    <input  type="file"required accept="image/*" name="coverGame" id="coverGame">
+                </div>
+                <div class="form-group">
+                    <label for="email">Agrega Capturas de Gameplay de tu juego:</label>
+                    <!--En este inputa tambien limito a solo imagenes-->
+                    <input  type="file"required accept="image/*" name="screenshotGame" id="screenshotGame" multiple>
+                </div>
+                <div class="form-group">
+                    <label for="gameName">Ingresa el Nombre del Juego: </label>
+                    <input  type="text" required name="gameName" id="gameName" placeholder="Nombre del Juego">
+                </div>
+                <div class="form-group">
+                    <select name="genderselect" id="genderselect"  required>
+                        <option value="#" selected>-- Estado del Juego --</option>
+                        <option value="beta">Beta</option>
+                        <option value="finalversion">Juego Completo</option>
+                    </select>
+
+                </div>
+                <div class="form-group">
+                    <!--Si en los chacks se selecciona Pago, se muestra un input donde se especifica el precio, esto se hace con javascript -->
+                    <p>Precio del Juego: </p>
+                    <div >
+                        <input type="radio" name="gamePrice" id="gamePrice1" value="option1" checked>
+                        <label class="form-check-label" for="gamePrice1">Gratis</label>
+                    </div>
+                    <div >
+                        <input type="radio" name="gamePrice" id="gamePrice2" value="option2">
+                        <label class="form-check-label" for="gamePrice2">Donación</label>
+                    </div>
+                    <div >
+                        <input type="radio" name="gamePrice" id="gamePrice3" value="option2">
+                        <label class="form-check-label" for="gamePrice3">Pago</label>
+                    </div>
+                </div>
+                <div id="divPrice" class="form-group" style="display: none;">
+                    <label for="InputgamePrice">Ingresa el Precio del Juego: </label>
+                    <input  type="number" required name="InputgamePrice" id="InputgamePrice" placeholder="Precio del Juego" value="0">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Sube el archivo de tu juego: (Pueden ser varios en caso de estar disponible para varias plataformas)</label><br>
+                    <input  type="file"required  name="fileGame" id="fileGame" multiple>
+                </div>
+
+                <div class="form-group">
+                    <div>
+                        <label for="email">Ingresa una Descripción (Puede contener una sinopsis o requisitos de insalación del juego): </label>
+                    </div>
+                    <div>
+                        <textarea name="gameDesc" id="gameDesc" rows="10" placeholder="Descripcion"  required></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <!--Botones del formulario-->
+                    <button  type="submit" id="btnsubmit" style="margin: 10px;"><ion-icon name="cloud-upload"></ion-icon> Subir Juego</button>
+                    <button  type="reset" id="btncancel"><ion-icon name="close"></ion-icon> Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!--Script necesarios para usar los iconos-->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <!--Codigo javascript-->
+    <script>
+        //se declaran eventos que se activan cuando se selecciona uno de los checks, con este codigo es que se logra lo que se menciono en el formulario de mostrar el input de precio, cuando se elge otro el input regresa a su valor de 0 y se oculta
+        document.getElementById('gamePrice3').addEventListener('click', ()=>{
+            document.getElementById('divPrice').style.display=''
+        })
+        document.getElementById('gamePrice2').addEventListener('click', ()=>{
+            document.getElementById('divPrice').style.display='none'
+            document.getElementById('InputgamePrice').value=0
+        })
+        document.getElementById('gamePrice1').addEventListener('click', ()=>{
+            document.getElementById('divPrice').style.display='none'
+            document.getElementById('InputgamePrice').value=0
+        })
+    </script>
+</body>
+</html>

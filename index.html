@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <!--Titulo de la pagina-->
+    <title>ShareGames</title>
+    <!--Logo que aparece en la pestana del navegador-->
+    <link rel="icon" href="img/logo.png">
+</head>
+<style>
+</style>
+<!--Frameset donde se declara las distribuciones de los frames que contendra, donde se da espacio para el banner, el cuerpo y el pie de pagina, en todos los frames se desactiva el border y el resize-->
+<frameset rows="22%,69%,9%" frameborder="no">
+    <!--Frame de banner, se da un fondo negro y usa el archivo de nav.html, y se desactiva su scrolling-->
+    <frame scrolling="no" src="nav.html" style="background: rgb(0, 0, 0);">
+    <!--Se declara otro frame set donde se dividira de forma vertical por columnas contendra los frames con el menu lateral y el frame donde se presenta el contenido de los articulos-->
+    <frameset name="framemenubody" cols="20%,80%">
+        <!--Menu lateral-->
+        <frame scrolling="no" src="menu.html" noresize="noresize" style="background: rgb(207, 207, 207);">
+        <!--Contenido del articulo, inicialmente comienza mostrando el SubmenuJuegosNuevos-text.html-->
+        <frame name="FrameShow" src="home.html"> 
+    </frameset>
+    <!--Frame del footer-->
+    <frame  scrolling="no" src="footer.html" style="background: rgb(0, 0, 0);">
+</frameset>
+
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <!--Titulo-->
+    <title>Juegos Gratis</title>
+    <!--Logo y estilos-->
+    <link rel="icon" href="img/logo.png">
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+    <!--Titulo del articulo-->
+    <hr height="75">
+    <!--Tiene id porque cambiaremos su contenido con javascript-->
+        <center><h1 id="titlesubmenu">Explora Juegos Gratis</h1></center>
+    <hr height="75">
+    <div style="justify-content: center; display: flex;">
+        <!--Se usa una tabla para mostrar informacion com si fuesen tarjetas, cada "tarjeta" lleva una imagen del juego, nombre, precio (en este caso gratuito), y una descripcion generica
+        Con el atributo estilo se hace que los bordes esten separados para hacer que las tarjetas no esten amontonadas y notar la separacion sin necesidad de bordes solidos-->
+        <table class="freegames" >
+            <tbody>
+                <tr>
+                    <td align="center" colspan="2">
+                        <img src="img/meatgrinder.png" alt="" width="100%">
+                    </td>
+                    <td align="center" colspan="2">
+                        <img src="img/goatimage.png" alt=""  width="100%">
+                    </td>
+                    <td align="center" colspan="2"> 
+                        <img src="img/thebabyinyellow.png" alt=""  width="100%">
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-weight: bold;">
+                        <a href="#" style="color: black;">Meat Grinder</a> 
+                    </td>
+                    <td style="background:green; font-weight:bold; text-align:center;">
+                        Free
+                    </td>
+                    <td style="font-weight: bold;">
+                        <a href="#" style="color: black;">Goat</a> 
+                    </td>
+                    <td style="background:green; font-weight:bold; text-align:center;">
+                        Free
+                    </td>
+                    <td style="font-weight: bold;">
+                        <a href="#" style="color: black;">The Baby in Yellow</a> 
+                    </td>
+                    <td style="background:green; font-weight:bold; text-align:center;">
+                        Free
+                    </td>
+                </tr>
+                <tr>
+                    <!--Con el atributo colspan hacemos que la celda ocupe varias columnas a la vez-->
+                    <td class="gameDescCard linelimit" colspan="2">
+                        ¡Fuiste atrapado por un maníaco disfrazado de cerdo y decidiste jugar un juego contigo! ¡Sal de su sótano o te atrapará! Si te atrapa, no habrá una segunda oportunidad...
+                    </td>
+                    <td class="gameDescCard linelimit" colspan="2">
+                        
+                        <p>
+                            En el extremo noroeste de Portugal, las cabras montesas son cazadas y decapitadas.
+                        Los cazadores furtivos toman las cabezas de esta especie protegida y las venden como trofeos...
+                        </p>
+                    </td>
+                    <td class="gameDescCard linelimit" colspan="2">
+                        <p>As a baby sitter you have to deal with some unruly children. 
+
+                            This one might be your last....
+                            How long will you stay in control?</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" colspan="2">
+                        <img src="img/desktopgoose.png" alt="" width="100%">
+                    </td>
+                    <td align="center" colspan="2">
+                        <img src="img/securitybooth.png" alt=""  width="100%">
+                    </td>
+                     <td align="center" colspan="2"> 
+                        <img src="img/ranitafishing.png" alt=""  width="100%">
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-weight: bold;">
+                        <a href="#" style="color: black;">Desktop Goose</a> 
+                    </td>
+                    <td style="background:green; font-weight:bold; text-align:center;">
+                        Free
+                    </td>
+                    <td style="font-weight: bold;">
+                        <a href="#" style="color: black;">Security Booth</a> 
+                    </td>
+                    <td style="background:green; font-weight:bold; text-align:center;">
+                        Free
+                    </td>
+                    <td style="font-weight: bold;">
+                        <a href="#" style="color: black;">Ranita Fishing</a> 
+                    </td>
+                    <td style="background:green; font-weight:bold; text-align:center;">
+                        Free
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-overflow: ellipsis;">
+                        He creado un ganso para tu escritorio.
+
+                        Agarrará tu mouse, rastreará lodo en tu pantalla... ¿te dejará un mensaje, te entregará memes?... 
+                    </td>
+                    <td colspan="2">
+                        Basado en 1996, trabajas para una empresa conocida como Nova Nexus, juegas como guardia de seguridad. Su función laboral es asegurarse de que solo el personal autorizado adecuado ingrese...
+                    </td>
+                    <td colspan="2">
+                        Ranita Fishing es un juego de plataformas en 3D con mecánicas de pesca. Se trata de una pequeña rana en una simple búsqueda de su abuelo...
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        
+    </div>
+</body>
+<script>
+    var cont=0//con este cont definiremos que mensaje mostrar en el titulo
+    //Con set interval definimos una funcion que se estara ejecutando cada cierto tiempo, en este caso cada 5 segundos
+    var intervaltime = setInterval(()=>{
+        //dependiendo de si cont es par o impar se mostrara un mesaje diferente cada 5 segundos en el titulo dl articulo
+        if(cont%2==0)
+        {
+            document.getElementById('titlesubmenu').innerHTML='Explora Juegos Gratis'
+        }
+        else
+        {
+            document.getElementById('titlesubmenu').innerHTML='Todos Los Dias Nuevo Contenido'
+        }
+        cont+=1
+    },5000)
+</script>
+</html>

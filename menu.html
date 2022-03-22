@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <!--Titulo-->
+    <title>Este sera el menu lateral</title>
+    <!--Estilos-->
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body style="background: rgb(207, 207, 207);">
+    <!--Se crea un div que contendra todo con fondo gris-->
+    <div style="background: rgb(207, 207, 207);">
+        <!--Todo se muestra usando una lista-->
+        <ul class="ListMenu">
+            <!--Los menus principales se separaran con divisiones hr-->
+            <hr>
+            <li class="itemListMenu">
+                <a class="linkarticles" href="home.html" target="FrameShow"><ion-icon name="home"></ion-icon><b>Home</b></a>
+            </li>
+            <hr>
+            <li class="itemListMenu">
+                <ion-icon name="rocket"></ion-icon><b> Explora Juegos</b>
+                <ul>
+                    <!--Lista con los submenus, esta lista esta dentro de un item de la lista externa-->
+                    <li class="itemListMenu">
+                        <!--Cada opcion del menu, dirige a un articulo diferente con un objetivo de mostrarlo en el frame donde se muestra el contenido de los articulos, que es el frame con el nombre FrameShow
+                        Cada opcion va acompanada de un icono que representa de lo que trata-->
+                        <a class="linkarticles" href="SubmenuJuegosNuevos-text.html" target="FrameShow"><ion-icon name="star"></ion-icon >Juegos Nuevos</a>
+                    </li>
+                    <li class="itemListMenu">
+                        <a class="linkarticles" href="SubmenuJuegosGratis-Table.html" target="FrameShow"><ion-icon name="game-controller"></ion-icon> Juegos Gratuitos</a>
+                    </li>
+                    <li class="itemListMenu">
+                        <a class="linkarticles" href="SubmenuSubirJuego.html" target="FrameShow"><ion-icon name="cloud-upload"></ion-icon> Subir Juego</a>
+                    </li>
+                </ul>
+            </li>
+            <hr>
+            <li class="itemListMenu">
+                <ion-icon name="newspaper"></ion-icon><b> Noticias</b>
+                <ul>
+                    <li class="itemListMenu">
+                        <a class="linkarticles" href="Submenudiarias.html" target="FrameShow"><ion-icon name="today"></ion-icon> Diarias</a>
+                    </li>
+                    <li class="itemListMenu">
+                        <a class="linkarticles" href="SubmenuTrailers.html" target="FrameShow"><ion-icon name="videocam"></ion-icon> Trailers</a>
+                    </li>
+                    <li class="itemListMenu">
+                        <a class="linkarticles" href="SubmenuEventos.html" target="FrameShow"><ion-icon name="sparkles"></ion-icon> Eventos</a>
+                    </li>
+                </ul>
+            </li>
+            <hr>
+            <li class="itemListMenu">
+                <ion-icon name="people"></ion-icon><b> Comunidad</b>
+                <ul>
+                    <li class="itemListMenu">
+                        <a class="linkarticles" href="SubmenuComentarios-form.html" target="FrameShow"><ion-icon name="chatbox-ellipses"></ion-icon> Comentarios </a>
+                    </li>
+                    <li class="itemListMenu">
+                        <a class="linkarticles" href="Submenusoprte.html" target="FrameShow"><ion-icon name="information-circle"></ion-icon> Soporte</a>
+                    </li>
+                    <li class="itemListMenu">
+                        <a class="linkarticles" href="Submenudesarrollo.html" target="FrameShow"><ion-icon name="code-working"></ion-icon> Desarrollo</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <!--Importacion de los scripts de los iconos que se estan usando-->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

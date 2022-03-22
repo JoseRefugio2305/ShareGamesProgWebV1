@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <!--Titulo-->
+    <title>Comentarios</title>
+    <!--Estilos-->
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+    <!--Titulo del articulo con separaciones-->
+    <div>
+        <hr height="75">
+        <center><h1>Comentarios</h1></center>
+        <hr height="75">
+    </div>
+    <style>
+        
+    </style>
+    <div>
+        <div class="divaviso">
+            <!--Se muestra un mensaje del proposito del articulo-->
+            <h3>¡Hola!</h3>
+            <p>Con el propósito de seguir mejorando nuestra página, estamos recibiendo sus comentarios con las opiniones acerca de los aspectos que podemos mejorar o incluso sobre lo que estamos haciendo bien. ¡Gracias! <ion-icon name="happy"></ion-icon></p>
+            
+        </div>
+        <!--Comienza el formulario-->
+        <div class="formcontainer">
+            <center><h3>Ingresa los datos correspondientes</h3></center>
+            <!--Los siguientes check son para saber si el usuario quiere ingresar sus datos o lo quiere comentar de forma anonima, si se quiere publicar de forma anonima se ocultan los inputs de nombre de ususario y el email-->
+            <div class="form-group" style="text-align: center;">
+                <div class="checkInline">
+                    <input class="form-check-input" type="radio" name="commentType" id="commentType1" value="option1">
+                    <label class="form-check-label" for="commentType1">Publicar de forma Anónima</label>
+                </div>
+                <div class="checkInline">
+                    <input class="form-check-input" type="radio" name="commentType" id="commentType2" value="option2" checked>
+                    <label class="form-check-label" for="commentType2">Mostrar Usuario</label>
+                </div>
+            </div>
+            
+            <form name="formComment" id="formComment" action="">
+                <div id="AlertPublic" style="display: none;">
+                    <!--Etse mensaje se muestra si se quiere comentar de forma anonima-->
+                    <p>El comentario se enviara como Anónimo</p>
+                </div>
+                <!--Se crean los inputs, los labelse declaran para ser los mensajes y se debe indicar a que input pertencen con el atributo for y el id del input al que pertenecen-->
+                <div id="AreaUserName">
+                    <div class="form-group">
+                        <label for="usarname">Ingresa un Nombre de Usuario: </label>
+                        <input type="text" required name="usarname" id="usarname" placeholder="Nombre de Usuario">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Ingresa un Correo de Contacto: </label>
+                        <input type="email"required  name="email" id="email" placeholder="Correo de Contacto">
+                    </div>
+                </div>
+                <!--Select con opciones de genero-->
+                <div class="form-group">
+                    <select name="genderselect" id="genderselect" required>
+                        <option value="#" selected>-- Selecciona un genero --</option>
+                        <option value="hombre">Hombre</option>
+                        <option value="mujer">Mujer</option>
+                    </select>
+
+                </div>
+                <!--Textarea para el comentario-->
+                <div class="form-group">
+                    <div>
+                        <label for="email">Ingresa un Comentario: </label>
+                    </div>
+                    <div>
+                        <textarea name="comment" id="comment" rows="10" placeholder="Comenta" required></textarea>
+                    </div>
+                </div>
+                <div>
+                    <button type="submit" id="btnsubmit" style="margin: 10px;"><ion-icon name="send"></ion-icon> Enviar Comentario</button>
+                    <button type="reset" id="btncancel"><ion-icon name="close"></ion-icon> Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!--Se importan los script necesarios para los iconos-->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <!--Codigo javascript-->
+    <script>
+        //se declaran eventos que se activan cuando se selecciona uno de los checks, con este codigo es que se logra lo que se menciono en el formulario de ocultar ciertos inputs cuando se desea publicar de forma anonimo
+        document.getElementById('commentType2').addEventListener('click', ()=>{
+            document.getElementById('AlertPublic').style.display='none'
+            document.getElementById('AreaUserName').style.display=''
+        })
+        document.getElementById('commentType1').addEventListener('click', ()=>{
+            document.getElementById('AlertPublic').style.display=''
+            document.getElementById('AreaUserName').style.display='none'
+        })
+    </script>
+</body>
+</html>
